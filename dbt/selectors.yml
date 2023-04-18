@@ -1,4 +1,0 @@
-selectors:
-  - name: stored_procedures
-    definition: 
-      tag: stored_procedures
