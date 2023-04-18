@@ -1,4 +1,4 @@
 config-version: 2
 
-name: 'zero-to-dbt'
+name: 'zero_to_dbt'
 version: '1.5'
