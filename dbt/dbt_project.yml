@@ -1,0 +1,32 @@
+name: 'secret'
+version: '1.0.0'
+config-version: 2
+
+vars:
+  my_cool_var: '2016-06-01'
+
+models:
+  secret:
+    +materialized: view
+    +schema: secret
+    +post-hook: "{{validate_model_name(model)}}"
+
+
+    demos:
+      enforce_limit:
+        +post-hook: "{{validate_sql_contains_limit(model)}}"
+
+
+    stored_procedures:
+      +tags: ['stored_procedures']
+      +materialized: table
+      +schema: stored_procedures_to_dbt_models
+
+      mart:
+        +grants:
+          select:    "{{target.database}}_read"
+          ownership: "{{target.database}}_write"
+
+seeds:
+  secret:
+    +enabled: False # disabled because these sources are static and take a few minutes to upload.

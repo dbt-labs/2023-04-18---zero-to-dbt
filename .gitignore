@@ -1,0 +1,7 @@
+target/
+dbt_modules/
+dbt_packages/
+logs/
+venv
+.vscode/
+.DS_Store
