@@ -1,0 +1,35 @@
+seeds:
+  - name: orders
+    description: main order tracking table
+    columns:
+      - name: o_orderkey
+        description: SF*1,500,000 are sparsely populated
+        tests: 
+          - unique
+          - not_null
+
+  - name: customer
+    columns:
+      - name: c_custkey
+        description: unique customer key
+        tests:
+          - unique
+          - not_null
+
+  - name: nation
+    columns:
+      - name: n_nationkey
+        description: 25 nations are populated
+        tests:
+          - unique
+          - not_null
+
+  - name: region
+    columns:
+      - name: r_regionkey
+        description: 5 regions are populated
+        tests:
+          - unique
+          - not_null
+
+  - name: lineitem

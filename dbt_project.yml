@@ -2,3 +2,48 @@ config-version: 2
 
 name: 'zero_to_dbt'
 version: '1.5'
+
+profile: fundamental_stability
+
+
+models:
+  zero_to_dbt:
+    +tags: zero_to_dbt
+    tpch:
+      +tags: tpch
+      marts:
+        +tags: mart
+
+
+
+seeds:
+  zero_to_dbt:
+    tpch:
+      +tags: tpch
+      +docs:
+        node_color: '#9467BD' # purple
+
+    retail_locations:
+      +tags: retail
+      +docs:
+        node_color: '#2CA02C' # green
+
+    netflix:
+      +tags: netflix
+      +docs:
+        node_color: '#800000' # dark red
+        
+    titanic:
+      +tags: titanic
+      +docs:
+        node_color: navy
+        
+    zodiac:
+      +tags: zodiac
+      +docs:
+        node_color: black
+        
+    bitcoin:
+      +tags: bitcoin
+      +docs:
+        node_color: '#FF7F0E' # orange

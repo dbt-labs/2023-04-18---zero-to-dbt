@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: monthly_revenue
+    columns:
+      - name: ORDER_MONTH
+        tests:
+          - not_null
+      - name: TOTAL_REVENUE
+        tests:
+          - not_null
+          - greater_than
